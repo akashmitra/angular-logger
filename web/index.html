@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loggerapp">
+
+<head>
+    <title>My first Angular App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body ng-controller="LoggerCtrl">
+    <h1>{{title}}</h1>
+
+    <!-- Logger -->
+    <div>
+        <input type="text" ng-model="user.firstname" placeholder="First Name" /> <br>
+        <input type="text" ng-model="user.lastname" placeholder="Last Name" /><br>
+        <button ng-click="sayDebug()">Say Debug</button> <br>
+        <button ng-click="sayError()">Say Error</button> <br>
+        <button ng-click="sayInfo()">Say Info</button> <br>
+        <button ng-click="sayWarn()">Say Warn</button> <br>
+
+    </div>
+
+    <!-- Javasript-->
+    <script src="../node_modules/angular/angular.min.js"></script>
+
+    <script src="js/app.module.js"></script>
+    <script src="js/app.config.js"></script>
+    <script src="js/logger.config.js"></script>
+    <script src="js/starter/starter.controller.js"></script> 
+    <script src="js/utils/logger.factory.js"></script> 
+</body>
+
+</html>
