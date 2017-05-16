@@ -17,16 +17,34 @@
 
             $delegate.debug = function () {
                 var args = [].slice.call(arguments),
-                    now = DateTime.formattedNow();
+                    now = moment().format();
 
                 // Prepend timestamp
                 args[0] = supplant("{0} - {1}", [now, args[0]]);
 
                 // Call the original with the output prepended with formatted timestamp
-                debugFn.apply(null, args)
+                debugFn.apply(null, args);
             };
 
             return $delegate;
         }
+
+        function supplant(template, values, pattern) {
+            pattern = pattern || /\{([^\{\}]*)\}/g;
+
+            return template.replace(pattern, function (a, b) {
+                var p = b.split('.'),
+                    r = values;
+
+                try {
+                    for (var s in p) { r = r[p[s]]; }
+                } catch (e) {
+                    r = a;
+                }
+
+                return (typeof r === 'string' || typeof r === 'number') ? r : a;
+            });
+        }
+
     }
 }());
