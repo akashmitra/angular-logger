@@ -19,7 +19,7 @@
         return service;
 
         function debug(message, data) {
-            $log.debug('Debug: ' + message, data);
+            $log.debug(message, data);
         }
 
         function error(message, data) {

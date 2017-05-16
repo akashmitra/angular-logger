@@ -11,7 +11,7 @@
         vm.title = "Hello";
         
         vm.sayDebug = function () {
-            logger.debug('Say Debug!', vm.user);
+            logger.debug('User Details :: ', vm.user);
         };
 
         vm.sayError = function () {
