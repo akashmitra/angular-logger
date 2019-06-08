@@ -19,7 +19,7 @@
     "async": "^0.9.0",
     "colors": "^1.0.3",
     "corser": "^2.0.1",
-    "ecstatic": "^1.4.1",
+    "ecstatic": "^2.2.2",
     "eventemitter3": "^1.2.0",
     "grunt": "^0.4.5",
     "he": "^0.5.0",
